@@ -1,8 +1,3 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide',
- 	once: true
- });
 
 jQuery(document).ready(function($) {
 
@@ -267,6 +262,11 @@ jQuery(document).ready(function($) {
 	};
 	siteDatePicker();
 
-	
+	AOS.init({
+		duration: 800,
+		easing: 'slide',
+		once: true
+	});
+   
 
 });
