@@ -1,5 +1,1 @@
-<p>© 2001-2022 «Лучшая биржа недвижимости»</p>
- 
-<p>Проспект Мира, 35, строение 2, офис 34</p>
- 
-<p><b>Телефон: +7 (981) 740-57-05</b></p>
+Copyright &copy;</script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
