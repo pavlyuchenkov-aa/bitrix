@@ -1,5 +1,4 @@
 <?
-$MESS ['MAIN_MENU_ITEMS_NAME'] = "Меню";
-$MESS ['MAIN_MENU_ITEMS_DESC'] = "Выводит меню указанного типа";
-$MESS ['MAIN_NAVIGATION_SERVICE'] = "Навигация";
+$MESS ['MENU_HORIZONT_MULTI_NAME'] = "Горизонтальное многоуровневое выпадающее меню";
+$MESS ['MENU_HORIZONT_MULTI_DESC'] = "Горизонтальное многоуровневое выпадающее меню";
 ?>

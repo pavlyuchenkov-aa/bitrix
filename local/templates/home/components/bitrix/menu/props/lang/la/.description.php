@@ -1,5 +1,4 @@
 <?
-$MESS["MAIN_MENU_ITEMS_DESC"] = "Muestra el menú del tipo seleccionado ";
-$MESS["MAIN_MENU_ITEMS_NAME"] = "Menú";
-$MESS["MAIN_NAVIGATION_SERVICE"] = "Navegación";
+$MESS["MENU_HORIZONT_MULTI_DESC"] = "Menú dropdown de niveles múltiples horizontal ";
+$MESS["MENU_HORIZONT_MULTI_NAME"] = "Menú dropdown de niveles múltiples horizontal ";
 ?>

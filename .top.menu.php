@@ -9,7 +9,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Объявления", 
-		"/estate_adverts/index.php", 
+		"/estate_adverts/", 
 		Array(), 
 		Array(), 
 		"" 

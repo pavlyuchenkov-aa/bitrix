@@ -1,10 +1,11 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Новости");
-?><?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	".default",
-	Array(
+$APPLICATION->SetTitle("Главная страница");
+?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"slider", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
@@ -14,10 +15,10 @@ $APPLICATION->SetTitle("Новости");
 		"AJAX_OPTION_STYLE" => "Y",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "1814400",
+		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "slider",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -25,7 +26,12 @@ $APPLICATION->SetTitle("Новости");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(0=>"NAME",1=>"price",2=>"",),
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PREVIEW_PICTURE",
+			2 => "price",
+			3 => "",
+		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "7",
@@ -45,14 +51,18 @@ $APPLICATION->SetTitle("Новости");
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(0=>"price",1=>"",),
+		"PROPERTY_CODE" => array(
+			0 => "location",
+			1 => "price",
+			2 => "",
+		),
 		"SEARCH_PAGE" => "/search/",
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
 		"SET_META_KEYWORDS" => "Y",
 		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "Y",
+		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
 		"SLIDER_PROPERTY" => "",
 		"SORT_BY1" => "ACTIVE_FROM",
@@ -63,46 +73,47 @@ $APPLICATION->SetTitle("Новости");
 		"TEMPLATE_THEME" => "blue",
 		"USE_RATING" => "N",
 		"USE_SHARE" => "N"
-	)
+	),
+	false
 );?><br>
 <div class="py-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
 				 <?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	Array(
-		"AREA_FILE_SHOW" => "file",
-		"AREA_FILE_SUFFIX" => "inc",
-		"EDIT_TEMPLATE" => "",
-		"PATH" => "/include/left_info.php"
-	)
-);?>
+						"bitrix:main.include",
+						"",
+						Array(
+							"AREA_FILE_SHOW" => "file",
+							"AREA_FILE_SUFFIX" => "inc",
+							"EDIT_TEMPLATE" => "",
+							"PATH" => "/include/left_info.php"
+						)
+					);?>
 			</div>
 			<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
 				 <?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	Array(
-		"AREA_FILE_SHOW" => "file",
-		"AREA_FILE_SUFFIX" => "inc",
-		"EDIT_TEMPLATE" => "",
-		"PATH" => "/include/center_info.php"
-	)
-);?>
+					"bitrix:main.include",
+					"",
+					Array(
+						"AREA_FILE_SHOW" => "file",
+						"AREA_FILE_SUFFIX" => "inc",
+						"EDIT_TEMPLATE" => "",
+						"PATH" => "/include/center_info.php"
+					)
+				);?>
 			</div>
 			<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
 				 <?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	Array(
-		"AREA_FILE_SHOW" => "file",
-		"AREA_FILE_SUFFIX" => "inc",
-		"EDIT_TEMPLATE" => "",
-		"PATH" => "/include/right_info.php"
-	)
-);?>
+					"bitrix:main.include",
+					"",
+					Array(
+						"AREA_FILE_SHOW" => "file",
+						"AREA_FILE_SUFFIX" => "inc",
+						"EDIT_TEMPLATE" => "",
+						"PATH" => "/include/right_info.php"
+					)
+				);?>
 			</div>
 		</div>
 	</div>
@@ -110,94 +121,148 @@ $APPLICATION->SetTitle("Новости");
 <div class="site-section site-section-sm bg-light">
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	".default",
-	Array(
+	"bitrix:news.line", 
+	"feed", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "1814400",
+		"CACHE_TIME" => "400",
 		"CACHE_TYPE" => "A",
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "feed",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_PICTURE",2=>"price",3=>"square",4=>"toilet_count",5=>"isgarage",6=>"floor_count",7=>"",),
-		"IBLOCKS" => array(0=>"7",),
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PREVIEW_PICTURE",
+			2 => "property_price",
+			3 => "property_isgarage",
+			4 => "property_square",
+			5 => "property_floor_count",
+			6 => "property_toilet_count",
+			7 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "7",
+		),
 		"IBLOCK_TYPE" => "estate_ads",
 		"NEWS_COUNT" => "9",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC"
-	)
-);?><br>
+	),
+	false
+);?>
 	</div>
 </div>
 <div class="site-section">
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"",
-	Array(
+	"bitrix:news.line", 
+	"services", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "1814400",
+		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => "services",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("NAME",""),
-		"IBLOCKS" => array("8"),
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "property_flaticon",
+			2 => "property_iconlink",
+			3 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "8",
+		),
 		"IBLOCK_TYPE" => "services",
-		"NEWS_COUNT" => "20",
+		"NEWS_COUNT" => "6",
 		"SORT_BY1" => "ID",
 		"SORT_BY2" => "",
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => ""
-	)
-);?><br>
+	),
+	false
+);?>
 	</div>
 </div>
 <div class="site-section bg-light">
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"",
-	Array(
+	"bitrix:news.line", 
+	"news_blog", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "1814400",
+		"CACHE_TIME" => "400",
 		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => "news_blog",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("NAME","PREVIEW_TEXT","PREVIEW_PICTURE",""),
-		"IBLOCKS" => array("1"),
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
+			3 => "DATE_CREATE",
+			4 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "1",
+		),
 		"IBLOCK_TYPE" => "news",
 		"NEWS_COUNT" => "3",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC"
-	)
+	),
+	false
 );?>
 	</div>
 </div>
 <div class="site-section">
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"",
-	Array(
+	"bitrix:news.line", 
+	"agents", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "1814400",
+		"CACHE_TIME" => "400",
 		"CACHE_TYPE" => "A",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("ID","CODE","NAME","PREVIEW_TEXT","PREVIEW_PICTURE","DETAIL_TEXT","USER_NAME","agenticon_1","agenticon_2","agenticon_3","agentlink_1","agentlink_2","agentlink_3"),
-		"IBLOCKS" => array("9"),
+		"FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "NAME",
+			3 => "PREVIEW_TEXT",
+			4 => "PREVIEW_PICTURE",
+			5 => "DETAIL_TEXT",
+			6 => "property_link1",
+			7 => "property_link2",
+			8 => "property_link3",
+			9 => "property_icon1",
+			10 => "property_icon2",
+			11 => "property_icon3",
+			12 => "property_qualification",
+			13 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "9",
+		),
 		"IBLOCK_TYPE" => "agents",
 		"NEWS_COUNT" => "20",
 		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "",
 		"SORT_ORDER1" => "ASC",
-		"SORT_ORDER2" => ""
-	)
+		"SORT_ORDER2" => "",
+		"COMPONENT_TEMPLATE" => "agents"
+	),
+	false
 );?>
 	</div>
 </div>
-<br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<p>
+</p>
+<p>
+</p>
+ <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

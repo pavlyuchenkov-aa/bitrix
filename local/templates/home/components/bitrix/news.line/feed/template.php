@@ -23,32 +23,34 @@
                     <div class="inner">
                         <span class="price rounded">$<?= number_format($arItem["PROPERTY_PRICE_VALUE"]); ?></span>
                         <h3 class="title"><?= $arItem["NAME"]; ?></h3>
-                        <p class="location"><?= $arItem["PROPERTY_LOCATION_VALUE"]; ?></p>
                     </div>
                     <div class="prop-more-info">
                         <div class="inner d-flex">
-                            <?if(!empty($arItem["PROPERTY_TOTAL_AREA_VALUE"])):?>
+                            <?if(!empty($arItem["PROPERTY_SQUARE_VALUE"])):?>
                                 <div class="col">
-                                <span><?= GetMessage("AREA"); ?></span><strong><?= $arItem["PROPERTY_TOTAL_AREA_VALUE"]; ?></strong>
+                                <span><?= GetMessage("SQUARE"); ?></span>
+                                    <strong>
+                                        <?= $arItem["PROPERTY_SQUARE_VALUE"]; ?><?= GetMessage("SQUARE_UNIT"); ?>
+                                    </strong>
                                 </div>
 
                             <?endif;?>
 
-                            <?if(!empty($arItem["PROPERTY_BEDS_VALUE"])):?>
+                            <?if(!empty($arItem["PROPERTY_FLOOR_COUNT_VALUE"])):?>
                                 <div class="col">
-                                <span><?= GetMessage("BEDS"); ?></span><strong><?= $arItem["PROPERTY_BEDS_VALUE"]; ?></strong>
+                                <span><?= GetMessage("FLOORS"); ?></span><strong><?= $arItem["PROPERTY_FLOOR_COUNT_VALUE"]; ?></strong>
                                 </div>
 
                             <?endif;?>
-                            <?if(!empty($arItem["PROPERTY_BATHROOMS_VALUE"])):?>
+                            <?if(!empty($arItem["PROPERTY_TOILET_COUNT_VALUE"])):?>
                             <div class="col">
-                                <span><?= GetMessage("BATHROOMS"); ?></span><strong><?= $arItem["PROPERTY_BATHROOMS_VALUE"]; ?></strong>
+                                <span><?= GetMessage("TOILETS"); ?></span><strong><?= $arItem["PROPERTY_TOILET_COUNT_VALUE"]; ?></strong>
                             </div>
                             <?endif;?>
 
                             <div class="col">
-                            <?if($arItem["PROPERTY_GARAGES_VALUE"] == 'да'):?>
-                                <span><?= GetMessage("GARAGES"); ?></span><strong><?= $arItem["PROPERTY_GARAGES_VALUE"]; ?></strong>
+                            <?if($arItem["PROPERTY_ISGARAGE_VALUE"] == 'Есть'):?>
+                                <span><?= GetMessage("GARAGES"); ?></span><strong><?= $arItem["PROPERTY_ISGARAGE_VALUE"]; ?></strong>
                             <?else:?>
                                 <span><?= GetMessage("GARAGES"); ?></span><strong>нет</strong>
 

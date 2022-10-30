@@ -1,15 +1,15 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Контакты", 
-		"contacts/", 
+		"Главная", 
+		"/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Авторизация", 
-		"login/", 
+		"authentification/", 
 		Array(), 
 		Array(), 
 		"" 
