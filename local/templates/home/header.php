@@ -91,6 +91,19 @@
                   </div>
                   <div class="col-6 col-md-6 text-right">
                       <div>
+                            <? global $USER; if (!$USER->IsAuthorized()) : ?>
+                                <input type="submit" onclick='location.href="/authentification/"' name="login_button" value="Login" class="btn btn-primary  py-1 px-4 rounded-0" />
+                                <? else : ?>
+                                <form action="<?= $arResult["AUTH_URL"] ?>" class="d-inline">
+                                    <? foreach ($arResult["GET"] as $key => $value) { ?>
+                                        <input type="hidden" name="<?= $key ?>" value="<?= $value ?>" />
+                                    <? } ?>
+                                    <?= bitrix_sessid_post() ?>
+                                    <input type="hidden" name="logout" value="yes" />
+                                    <input type="submit" name="logout_button" value="Log Out" class="btn btn-primary  py-1 px-4 rounded-0" />
+                                </form>
+                            <? endif; ?>
+
                           <? $APPLICATION->IncludeComponent(
                               "bitrix:main.include",
                               "",
