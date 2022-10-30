@@ -1,9 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Личный кабинет продавца");
-?><?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Личный кабинет продавца");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:main.profile",
 	"",
@@ -14,4 +11,4 @@ $APPLICATION->SetTitle("Личный кабинет продавца");
 		"USER_PROPERTY" => array(),
 		"USER_PROPERTY_NAME" => ""
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

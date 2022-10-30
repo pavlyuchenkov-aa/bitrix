@@ -52,6 +52,7 @@ $this->setFrameMode(true);
 ?>
 <br />
 <?endif?>
+
 <? $GLOBALS["arFilter"] = Array(
     "CREATED_BY" => $USER->GetID(),
 ); ?>
@@ -59,13 +60,12 @@ $this->setFrameMode(true);
 
 <? if ($APPLICATION->GetTitle() == 'Объявления'): ?>
 	<? $MY_FILTER = $arParams["FILTER_NAME"]; ?>
-
-          
     <? elseif($APPLICATION->GetTitle() == 'Мои объявления'): ?>
 		<? $MY_FILTER = 'arFilter'; ?>
 
         <h2><?= GetMessage("TITLE_ADS"); ?></h2>
     <?endif?>
+	
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",

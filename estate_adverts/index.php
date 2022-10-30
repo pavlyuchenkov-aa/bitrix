@@ -2,9 +2,9 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Объявления");
 ?><?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Объявления");
-?><?$APPLICATION->IncludeComponent(
+?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news",
 	"adverts",
 	Array(
@@ -76,4 +76,4 @@ $APPLICATION->SetTitle("Объявления");
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N"
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
