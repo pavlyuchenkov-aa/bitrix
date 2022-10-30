@@ -94,10 +94,10 @@ $this->setFrameMode(true);
                         <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
                             <span class="d-inline-block text-black mb-0 caption-text"><?= GetMessage("GARAGES"); ?></span>
                             <strong class="d-block">
-                                <? if ($arResult["DISPLAY_PROPERTIES"]["GARAGES"]["VALUE"]) : ?>
-                                    <?= GetMessage("YES"); ?>
+                                <? if ($arResult["DISPLAY_PROPERTIES"]["isgarage"]["VALUE"]) : ?>
+                                    <?= GetMessage("GARAGES_YES"); ?>
                                 <? else : ?>
-                                    <?= GetMessage("NO"); ?>
+                                    <?= GetMessage("NO_GARAGES"); ?>
                                 <? endif; ?>
                             </strong>
                         </div>
