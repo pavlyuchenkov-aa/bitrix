@@ -1,9 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Личный кабинет покупателя");
-?><?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Личный кабинет покупателя");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:subscribe.form",
 	"",
@@ -24,4 +21,4 @@ $APPLICATION->SetTitle("Личный кабинет покупателя");
 		"USER_PROPERTY" => array(),
 		"USER_PROPERTY_NAME" => ""
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
