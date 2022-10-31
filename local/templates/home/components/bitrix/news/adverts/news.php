@@ -63,7 +63,7 @@ $this->setFrameMode(true);
     <? elseif($APPLICATION->GetTitle() == 'Мои объявления'): ?>
 		<? $MY_FILTER = 'arFilter'; ?>
 
-        <h2><?= GetMessage("TITLE_ADS"); ?></h2>
+        <h2><?= GetMessage("ADVERT_TITLE"); ?></h2>
     <?endif?>
 	
 <?$APPLICATION->IncludeComponent(

@@ -110,7 +110,7 @@ $this->setFrameMode(true);
                     <? if ($APPLICATION->GetTitle() == 'Объявления'): ?>
                         <h2><?= GetMessage("TITLE_PROPERTY"); ?></h2>
                     <? elseif($APPLICATION->GetTitle() == 'Мои объявления'): ?>
-                        <h2><?= GetMessage("TITLE_ADS"); ?></h2>
+                        <h2><?= GetMessage("ADVERT_TITLE"); ?></h2>
                     <?endif?>
 
                 </div>
