@@ -13,4 +13,3 @@ $APPLICATION->SetTitle("Вход на сайт");
 
 <p><a href="<?=SITE_DIR?>">Вернуться на главную страницу</a></p>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
-

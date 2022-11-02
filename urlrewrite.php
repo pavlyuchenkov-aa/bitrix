@@ -8,7 +8,7 @@ $arUrlRewrite=array (
     'PATH' => '/lichnyy-kabinet-prodavtsa/moi-obyavleniya/index.php',
     'SORT' => 100,
   ),
-  14 => 
+  16 => 
   array (
     'CONDITION' => '#^/o-servise/vakansii/#',
     'RULE' => '',

@@ -39,7 +39,7 @@ $APPLICATION->SetTitle("Вакансии");
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => array("NAME",""),
-		"LIST_PROPERTY_CODE" => array("","SHEDULE","EMPLOYMENT","SALARY",""),
+		"LIST_PROPERTY_CODE" => array("shedule","employment","salary","","","",""),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
